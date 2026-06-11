@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGAÇÃO SUPERIOR (Mantida idêntica)
+   ========================================================================== */
+.navbar-superior {
+    width: 100%;
+    height: 90px;
+    background-color: #dfa810;
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-logo h2 { font-size: 1.4em; font-weight: 700; color: #1a1a1a; }
+.nav-links { display: flex; list-style: none; height: 100%; align-items: center; }
+.nav-links a { text-decoration: none; color: #ffffff; font-weight: 700; font-size: 0.85em; padding: 0 20px; height: 100%; display: flex; align-items: center; transition: 0.3s; }
+.nav-links a.ativo {color: #ffffff; }
+.nav-contato-topo { display: flex; flex-direction: column; text-align: right; }
+.tel-topo { font-weight: 700; color: #333333; font-size: 0.9em; }
+.email-topo { color: #00bcd4; font-size: 0.8em; }
+/* Seleciona os links do menu quando o mouse passa por cima, 
+   MAS ignora o botão que já está ativo (:not(.ativo)) */
+.nav-links a:hover:not(.ativo) {
+    text-decoration: none;
+    color: #dfa810;
+    background-color: #1a1a1a;
+    font-weight: 700;
+    font-size: 0.85em;
+    
+    /* MODIFICAÇÃO 1: Em vez de ocupar a barra toda (100%), limitamos a altura do botão */
+    height: 50px; 
+    
+    /* MODIFICAÇÃO 2: Controlamos o 'gordo' do botão.
+       O primeiro valor (15px) dá o espaço em CIMA e embaixo.
+       O segundo valor (25px) dá o espaço nas LATERAIS. */
+    padding: 15px 25px; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Garante que o texto fique bem no meio do botão gordinho */
+    transition: all 0.3s ease;
+
+    /* Mantém as pontas arredondadas que você pediu */
+    border-radius: 8px; 
+}
+
+/* ==========================================================================
+   3. SEÇÃO HERO (O CONTAINER DO CONTEÚDO)
+   ========================================================================== */
+.hero-site {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px); /* Mantém a altura ocupando o resto da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Crucial para o zoom não vazar para fora da tela */
+    background-color: #1a1a1a; /* Garante o fundo preto nas extremidades */
+}
+
+/* ==========================================================================
+   4. A CAMADA DA IMAGEM (Resolve a centralização e o tamanho)
+   ========================================================================== */
+.hero-site::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Configuração limpa e direta da imagem de fundo */
+    background-image: url('imagens/logo.png');
+    background-position: center center; /* Força a imagem no centro absoluto */
+    background-repeat: no-repeat;       /* Garante que não vai duplicar */
+    background-size: cover;             /* Força a imagem a esticar e ocupar a tela toda */
+    
+    /* Cria a película escura perfeita por cima da imagem para dar leitura ao texto */
+    background-color: rgba(26, 26, 26, 0.65);
+    background-blend-mode: overlay;
+
+    /* Aplica a máscara que suaviza as bordas laterais com o fundo preto */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    
+    z-index: 1; /* Fica por baixo do texto */
+
+    /* Ativa a animação de zoom na imagem de fundo */
+    animation: zoomNoFundo 1.8s ease-out forwards;
+}
+
+/* Receita do Zoom de cinema estável */
+@keyframes zoomNoFundo {
+    0% {
+        transform: scale(1.15); /* Começa com um leve zoom próximo */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);    /* Estabiliza cobrindo tudo perfeitamente */
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   5. CONTEÚDO CENTRALIZADO (TEXTOS)
+   ========================================================================== */
+.container-hero {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 2; /* Obriga o texto a ficar na frente da imagem (z-index: 1) */
+    
+    /* Animação dos textos surgindo subindo suavemente */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: subirTextos 1s ease-out forwards 0.8s;
+}
+
+@keyframes subirTextos {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container-hero h1 {
+    font-size: 3.8em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.9); 
+}
+
+.subtitulo {
+    font-size: 1.3em;
+    color: #cccccc;
+    font-weight: 300;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.9);
+}
