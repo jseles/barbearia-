@@ -507,3 +507,26 @@ html {
     background-size: cover;
     background-position: center;
 } 
+.cards-bar {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Faz os dois cards terem a mesma altura automaticamente */
+    gap: 30px;            /* Espaço de separação entre os cartões */
+    flex-wrap: wrap;       /* Se abrir no celular, um card vai para baixo do outro */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.cards-bar :hover {
+    transform: translateY(-8px); /* Card sobe de leve */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.btn-corte {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
