@@ -159,3 +159,264 @@ body {
     font-weight: 300;
     text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.9);
 }
+/* ==========================================================================
+   1. EFEITO DE ROLAGEM SUAVE (Obrigatório)
+   ========================================================================== */
+html {
+    scroll-behavior: smooth; /* Faz a tela deslizar suavemente até os planos */
+}
+
+/* ==========================================================================
+   2. ESTRUTURA GERAL DA SEÇÃO DE PLANOS
+   ========================================================================== */
+.container-planos {
+    width: 100%;
+    padding: 100px 4% 120px 4%;
+    background-color: #1a1a1a; /* Mantém o fundo preto padrão da identidade */
+    text-align: center;
+}
+
+.titulo-planos {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.sub-planos {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin-bottom: 60px;
+}
+
+/* Container Flexbox para alinhar os cartões lado a lado */
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Faz os dois cards terem a mesma altura automaticamente */
+    gap: 30px;            /* Espaço de separação entre os cartões */
+    flex-wrap: wrap;       /* Se abrir no celular, um card vai para baixo do outro */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO DOS CARDS (DESIGN PREMIUM)
+   ========================================================================== */
+.card-plano {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do cartão */
+.card-plano:hover {
+    transform: translateY(-8px); /* Card sobe de leve */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Destaque para o plano VIP (Estilo a cor ouro da sua logo) */
+.card-plano.destaque {
+    border: 2px solid #dfa810; /* Usa o azul vivo do seu botão do menu */
+}
+
+/* Selo "Mais Vendido" em cima do plano VIP */
+.selo {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dfa810;
+    color: #ffffff;
+    font-size: 0.75em;
+    font-weight: 700;
+    padding: 6px 15px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* Elementos internos dos cards */
+.card-plano h3 {
+    font-size: 1.6em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #dfa810; /* Cor em destaque para o preço */
+    margin-bottom: 30px;
+}
+
+.preco span {
+    font-size: 0.4em;
+    color: #aaaaaa;
+    font-weight: 300;
+}
+
+.card-plano ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+    flex-grow: 1; /* Empurra o botão sempre para o final do card */
+}
+
+.card-plano ul li {
+    color: #e0e0e0;
+    font-size: 0.95em;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Ícone de check dourado/azul antes de cada benefício */
+.card-plano ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #dfa810;
+    font-weight: 700;
+}
+
+/* Botão de assinatura interno */
+.btn-assinar {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background-color: transparent;
+    border: 2px solid #555555;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover do botão de assinar do card de destaque */
+.card-plano.destaque .btn-assinar {
+    background-color: #dfa810;
+    border-color: #ffbb00;
+}
+
+.card-plano .btn-assinar:hover {
+    background-color: #000000;
+    color: #dfa810;
+    border-color: #dfa810;
+}
+/* CONTAINER PRINCIPAL DE SERVIÇOS */
+.container-servicos {
+    width: 100%;
+    padding: 80px 4%;
+    background-color: #151515; /* Fundo escuro premium */
+    text-align: center;
+}
+.titulo-servicos{
+    font-size: 2.8em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.sub-servicos { 
+    font-size: 1.1em; 
+    color: #aaaaaa; 
+    margin-bottom: 50px; 
+}
+/* GRADE AUTOMÁTICA DE CARDS */
+.grade-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* CARD DE SERVIÇO INDIVIDUAL */
+.item-servico {
+    background-color: #202020;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid #2d2d2d;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.item-servico:hover {
+    border-color: #dfa810; /* Realce turquesa ao passar o mouse */
+    transform: translateY(-4px);
+}
+.item-servico h3 { 
+    font-size: 1.3em; 
+    color: #dfa810; 
+    font-weight: 700; 
+    margin-bottom: 12px;
+}
+.descricao-curta { 
+    font-size: 0.9em; 
+    color: #bbbbbb; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+    flex-grow: 1; 
+}
+/* BOTÃO RETRÁTIL "SAIBA MAIS" */
+.detalhes-servico {
+    border-top: 1px solid #333333;
+    padding-top: 12px;
+    margin-top: auto;
+}
+.detalhes-servico summary {
+    color: #dfa810;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+    list-style: none; /* Some a setinha feia padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detalhes-servico summary::after {
+    content: "＋";
+    font-size: 0.8em;
+}
+
+.detalhes-servico[open] summary::after {
+    content: "－";
+}
+
+.conteudo-detalhado {
+    padding-top: 12px;
+    font-size: 0.85em;
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+.container-barbeiros{
+     width: 100%;
+    padding: 100px 4%;
+    background-color: #ffffff; /* Fundo escuro premium */
+    text-align: center;
+    color: #ffffff;
+    border-radius: 15px;
+   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("imagens/fundo-2.png");
+    background-size: cover;
+    background-position: center;
+
+
+}
+.card-barbeiro {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
