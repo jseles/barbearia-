@@ -409,7 +409,7 @@ html {
 
 
 }
-.card-barbeiro {
+.card-felipe {
     background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
     border: 1px solid #333333;
     border-radius: 12px;
@@ -419,4 +419,35 @@ html {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/felipe.png");
+    background-size: cover;
+    background-position: center;
+}
+.card-gui {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/gui.png");
+    background-size: cover;
+    background-position: center;
+}
+.card-gustavo {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/gustavo.png");
+    background-size: cover;
+    background-position: center;
 }
