@@ -451,3 +451,59 @@ html {
     background-size: cover;
     background-position: center;
 }
+.card-junior {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/junior.png");
+    background-size: cover;
+    background-position: center;
+}  
+.card-mateus {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/mateus.png");
+    background-size: cover;
+    background-position: center;
+} 
+.card-rael {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/rael.png");
+    background-size: cover;
+    background-position: center;
+} 
+.card-vitor {
+    background-color: #252525; /* Cinza ligeiramente mais claro que o fundo principal */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("imagens/vitor.png");
+    background-size: cover;
+    background-position: center;
+} 
