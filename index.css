@@ -750,7 +750,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    /* Alinha o topo no celular */
+    /* Alinha o topo no celular (Mantido) */
     .navbar-superior {
         display: flex !important;
         justify-content: space-between !important;
@@ -760,10 +760,10 @@ html {
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        height: 70px !important; /* Altura fixa controlada para o mobile */
+        height: 70px !important; 
         box-sizing: border-box !important;
         background-color: #1a1a1a !important;
-        z-index: 10000 !important; /* Garante que a barra do topo seja a camada mais alta */
+        z-index: 10000 !important; 
     }
 
     .menu-toggle {
@@ -776,20 +776,22 @@ html {
         cursor: pointer;
     }
 
-    /* O MENU BRANCO */
+    /* O MENU BRANCO (MUDADO PARA FIXED) */
     .nav-links {
         display: none; 
-        position: absolute !important;
-        top: 70px !important; /* Abre exatamente onde termina a barra de topo */
+        position: fixed !important; /* Fixa na tela para nenhum elemento vazar */
+        top: 70px !important; /* Abre colado abaixo dos 70px do topo */
         left: 0 !important;
         width: 100% !important;
+        height: calc(100vh - 70px) !important; /* Ocupa a altura inteira do celular */
         background-color: #ffffff !important; 
         flex-direction: column !important;
         padding: 0 !important;
         margin: 0 !important;
         list-style: none !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
-        z-index: 9999 !important; /* Fica à frente dos cards dos barbeiros */
+        z-index: 9999 !important; 
+        overflow-y: auto; /* Permite rolar os links se a tela for muito pequena */
     }
 
     .nav-links li {
@@ -799,36 +801,38 @@ html {
     .nav-links li a {
         display: block !important;
         color: #1a1a1a !important; 
-        padding: 16px 20px !important;
+        padding: 18px 20px !important; /* Um pouquinho mais de espaço para o clique */
         text-decoration: none !important;
-        font-size: 15px !important;
+        font-size: 16px !important;
         font-weight: bold !important;
         border-bottom: 1px solid #f0f0f0 !important;
         text-align: left !important;
     }
 
-    /* A FAIXA PRETA DE CONTACTOS */
+    /* A FAIXA PRETA DE CONTACTOS (MUDADA PARA FIXED NO BOTTOM) */
     .nav-contato-topo {
         display: none; 
-        position: absolute !important;
-        top: calc(70px + 269px) !important; /* 70px do topo + altura somada dos 5 links */
+        position: fixed !important; /* Fixa no rodapé da cortina */
+        bottom: 0 !important; /* Gruda na base do celular */
         left: 0 !important;
         width: 100% !important;
         background-color: #1a1a1a !important; 
         flex-direction: column !important;
-        padding: 20px !important;
+        padding: 25px 20px !important;
         box-sizing: border-box !important;
         gap: 12px !important;
         text-align: left !important;
-        z-index: 9999 !important; /* Também fica à frente de tudo */
-        border-top: 1px solid #333 !important;
+        z-index: 10000 !important; /* Fica por cima da parte branca */
+        border-top: 2px solid #dfa810 !important; /* Linha amarela charmosa dividindo */
     }
 
     .nav-contato-topo .tel-topo,
-    .nav-contato-topo .email-topo {
+    .nav-contato-topo .email-topo,
+    .nav-contato-topo a.tel-topo {
         color: #ffffff !important;
         font-size: 14px !important;
         display: block !important;
+        text-decoration: none !important;
     }
 
     /* Classes de ativação do JavaScript */
@@ -837,7 +841,9 @@ html {
         display: flex !important;
     }
 }
+
+/* Fora da media query para garantir que herde no PC se necessário */
 .nav-contato-topo a.tel-topo {
-        text-decoration: none !important;
-        color: #ffffff !important;
-    }
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
