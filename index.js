@@ -32,33 +32,48 @@ window.addEventListener('click', (evento) => {
     }
 });
 
-
 // ==========================================
 // 2. CONTROLE DA TROCA DE PAGAMENTO (PIX / CARTÃO)
 // ==========================================
-// Seleciona os dois botões pela classe comum deles
 const opcoesPagamento = document.querySelectorAll('.opcao-pagamento');
-
-// Seleciona as duas caixas de formulário
 const camposPix = document.getElementById('campos-pix');
 const camposCartao = document.getElementById('campos-cartao');
 
-// Monitora o clique usando a posição (index) dos botões: PIX é 0, Cartão é 1
 opcoesPagamento.forEach((opcao, index) => {
     opcao.addEventListener('click', () => {
-        // 1. Alterna a cor preta (classe ativo) dos botões
+        // Alterna a cor preta (classe ativo) dos botões
         opcoesPagamento.forEach(opt => opt.classList.remove('ativo'));
         opcao.classList.add('ativo');
 
-        // 2. Alterna os formulários baseado no botão clicado
+        // Alterna os formulários baseado no botão clicado
         if (index === 0) {
-            // Se clicou no PIX (Posição 0)
-            camposPix.classList.remove('escondido');    // Mostra PIX
-            camposCartao.classList.add('escondido');   // Esconde Cartão
+            camposPix.classList.remove('escondido'); 
+            camposCartao.classList.add('escondido');  
         } else if (index === 1) {
-            // Se clicou no Cartão (Posição 1)
-            camposCartao.classList.remove('escondido'); // Mostra Cartão
-            camposPix.classList.add('escondido');      // Esconde PIX
+            camposCartao.classList.remove('escondido');
+            camposPix.classList.add('escondido');      
         }
+    });
+});
+
+// ==========================================
+// 3. CONTROLE DO MENU HAMBÚRGUER MOBILE
+// ==========================================
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+const navContato = document.getElementById('navContato');
+const linksDoMenu = document.querySelectorAll('.nav-links a');
+
+// Abre ou fecha a lista ao clicar no botão ☰ MENU
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('aberto');
+    navContato.classList.toggle('aberto');
+});
+
+// Fecha o menu automaticamente quando o cliente clicar em qualquer link
+linksDoMenu.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('aberto');
+        navContato.classList.remove('aberto');
     });
 });

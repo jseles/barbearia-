@@ -8,29 +8,35 @@
 </head>
 <body>
 
-    <nav class="navbar-superior">
-        <div class="nav-logo">
-            <h2>DOM PIGNATTI'S</h2>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="ativo">HOME</a></li>
-            <li><a href="#secao-planos">PLANOS</a></li>
-            <li><a href="#secao-servicos">SERVIÇOS</a></li>
-            <li><a href="#secao-barbeiros">BARBEIROS</a></li>
-            <li><a href="https://www.google.com/maps/place/Barbearia+Dom+Pignatti%C2%B4s/@-23.5041079,-46.5174062,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce6150e345354f:0x8a283ab472cb3ec7!8m2!3d-23.5041079!4d-46.5148313!16s%2Fg%2F11rvgzzk_n?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D">ENDEREÇO</a></li>
-        </ul>
-        <div class="nav-contato-topo">
-            <span class="tel-topo">📞 (11) 95193-4495</span>
-            <span class="email-topo">contato@dompignatti.com.br</span>
-        </div>
-    </nav>
+   <nav class="navbar-superior">
+    <div class="nav-logo">
+        <h2>DOM PIGNATTI'S</h2>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle">☰ MENU</button>
 
-    <header class="hero-site">
-        <div class="container-hero">
-            <h1>Alinhando sua imagem.<br>Elevando sua confiança.</h1>
-            <p class="subtitulo">Garanta seu momento e viva essa experiência exclusiva.</p>
-        </div>
-    </header>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="ativo">HOME</a></li>
+        <li><a href="#secao-planos">PLANOS</a></li>
+        <li><a href="#secao-servicos">SERVIÇOS</a></li>
+        <li><a href="#secao-barbeiros">BARBEIROS</a></li>
+        <li><a href="https://www.google.com/maps/place/Barbearia+Dom+Pignatti%C2%B4s/@-23.5041079,-46.5174062,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce6150e345354f:0x8a283ab472cb3ec7!8m2!3d-23.5041079!4d-46.5148313!16s%2Fg%2F11rvgzzk_n?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D">ENDEREÇO</a></li>
+    </ul>
+    
+   <div class="nav-contato-topo" id="navContato">
+    <a href="https://wa.me/5511951934495" target="_blank" class="tel-topo" style="text-decoration: none; color: inherit;">
+        📞 (11) 95193-4495 clique aqui para nos chamar no whats
+    </a>
+    <span class="email-topo">contato@dompignatti.com.br</span>
+</div>
+</nav>
+
+<header class="hero-site">
+    <div class="container-hero">
+        <h1>Alinhando sua imagem.<br>Elevando sua confiança.</h1>
+        <p class="subtitulo">Garanta seu momento e viva essa experiência exclusiva.</p>
+    </div>
+</header>
     <section id="secao-planos" class="container-planos">
     
     <h2 class="titulo-planos">Nossos Planos Mensais</h2>
@@ -177,6 +183,7 @@
     </div>
 
     <script src="index.js"></script>
+
 
 </section>
 <section id="secao-servicos" class="container-servicos">
