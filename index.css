@@ -750,19 +750,22 @@ html {
 }
 
 @media (max-width: 768px) {
-    /* Alinha o título e o botão lado a lado no topo do celular */
+    /* Alinha o topo no celular */
     .navbar-superior {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
         padding: 15px 20px !important;
         position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
         width: 100% !important;
+        height: 70px !important; /* Altura fixa controlada para o mobile */
         box-sizing: border-box !important;
-        background-color: #1a1a1a !important; /* Mantém o fundo escuro no topo */
+        background-color: #1a1a1a !important;
+        z-index: 10000 !important; /* Garante que a barra do topo seja a camada mais alta */
     }
 
-    /* Exibe o botão do menu no mobile com estilo limpo */
     .menu-toggle {
         display: block !important;
         background: none;
@@ -773,29 +776,29 @@ html {
         cursor: pointer;
     }
 
-    /* Transforma a sua lista de links na lista vertical branca do exemplo */
+    /* O MENU BRANCO */
     .nav-links {
-        display: none; /* Começa escondido */
+        display: none; 
         position: absolute !important;
-        top: 100% !important;
+        top: 70px !important; /* Abre exatamente onde termina a barra de topo */
         left: 0 !important;
         width: 100% !important;
-        background-color: #ffffff !important; /* Fundo branco igual ao print */
+        background-color: #ffffff !important; 
         flex-direction: column !important;
         padding: 0 !important;
         margin: 0 !important;
         list-style: none !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+        z-index: 9999 !important; /* Fica à frente dos cards dos barbeiros */
     }
 
-    /* Cada item da lista vira uma linha com borda divisória */
     .nav-links li {
         width: 100% !important;
     }
 
     .nav-links li a {
         display: block !important;
-        color: #1a1a1a !important; /* Texto escuro para contrastar com o fundo branco */
+        color: #1a1a1a !important; 
         padding: 16px 20px !important;
         text-decoration: none !important;
         font-size: 15px !important;
@@ -804,39 +807,37 @@ html {
         text-align: left !important;
     }
 
-    /* Efeito de clique/passar o mouse nos links do menu */
-    .nav-links li a:hover, .nav-links li a.ativo {
-        background-color: #f7f7f7 !important;
-        color: #ffcc00 !important; /* Destaque dourado */
-    }
-
-    /* Transforma a caixa de contatos na faixa escura que fica no rodapé do menu */
+    /* A FAIXA PRETA DE CONTACTOS */
     .nav-contato-topo {
-        display: none; /* Começa escondido e só abre junto com os links */
+        display: none; 
         position: absolute !important;
-        top: calc(100% + 265px); /* Joga os contatos para baixo dos 5 links */
+        top: calc(70px + 269px) !important; /* 70px do topo + altura somada dos 5 links */
         left: 0 !important;
         width: 100% !important;
-        background-color: #1a1a1a !important; /* Faixa escura igual ao print */
+        background-color: #1a1a1a !important; 
         flex-direction: column !important;
         padding: 20px !important;
         box-sizing: border-box !important;
-        gap: 10px !important;
+        gap: 12px !important;
         text-align: left !important;
+        z-index: 9999 !important; /* Também fica à frente de tudo */
+        border-top: 1px solid #333 !important;
     }
 
-    .nav-contato-topo span {
+    .nav-contato-topo .tel-topo,
+    .nav-contato-topo .email-topo {
         color: #ffffff !important;
         font-size: 14px !important;
         display: block !important;
     }
 
-    /* Classes auxiliares que o JavaScript vai usar para exibir o menu */
-    .nav-links.aberto {
-        display: flex !important;
-    }
-    
+    /* Classes de ativação do JavaScript */
+    .nav-links.aberto,
     .nav-contato-topo.aberto {
         display: flex !important;
     }
 }
+.nav-contato-topo a.tel-topo {
+        text-decoration: none !important;
+        color: #ffffff !important;
+    }
